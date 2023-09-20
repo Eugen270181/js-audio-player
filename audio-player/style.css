@@ -1,0 +1,13 @@
+* {
+  margin:0;
+  padding: 0;
+  border:0;
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  background: black;
+  color:orange;
+  outline:1px solid red;
+}
