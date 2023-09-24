@@ -13,7 +13,7 @@
 }
 html, 
 body {
-  /* height:100%; */
+  height:100%;
   background: url("./assets/images/background.jpg") center/cover no-repeat;
 }
 .wrapper {  
@@ -28,47 +28,85 @@ body {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  margin:auto;
-  background: grey;
-  border-radius: 10px;
-  border:2px solid grey;
+  margin: auto;
+  background:transparent;
+  border-radius: 1rem;
+  border: 0.2rem solid grey;
   /* align-items: center; */
-  gap: 2rem;
+  /* gap: 1rem; */
   width: 60%;
+  height: auto;
 }
 /*----------------SLIDER_CONTAINER--------------*/
-.slider-container {
-  overflow: hidden;
-  height:auto;
-}
-
 .slider {
+  position: relative;
+  height: 600px;
+  opacity: 0.8;
   display: flex;
 }
 
+.slider-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.slider-card.active {
+  visibility:visible;
+  opacity: 1;
+  transition: 0.6s;
+}
+
 .slider-img {
-  width: 100%;
-  display: block;
+  /* display: block; */
+  /* width: 100%; */
+  border-radius: 1rem;
+  border: 0.2rem solid grey;
+}
+.slider-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-width: 100%; */
+  background: grey;
+  color: #89d86a;
+  font-size: 2rem;
 }
 /*----------------CONTROL_CONTAINER--------------*/
 .control-container {
-  display:flex;
-  justify-content: center;
+  display: flex;
+  /* margin-top: 3rem; */
+  justify-content: space-between;
   align-items: center;
+  background: grey;
+}
+
+.control-btn-play {
+  max-width: 4rem;
+}
+#mp3 {
+  
+}
+.control-btns {
+  display:flex;
+  flex-direction: column;
+}
+.control-btn-prev,
+.control-btn-next {
+  max-width: 2rem;
 }
 /*----------------------FOOTER---------------------------------*/
 footer {
   flex: 0 0 auto;
-  /* position: absolute;
-  left: 0;
-  bottom: 0; */
-  /* width: 100%; */
-  /* height: 90px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  border-top: 0.3rem solid wheat;
+  border-top: 0.3rem solid #89d86a;
   background: black;
   opacity: 0.8;
 }
