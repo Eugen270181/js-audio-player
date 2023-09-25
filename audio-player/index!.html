@@ -9,24 +9,29 @@
   <title>Audio-player</title>
 </head>
 <body>
+  <audio src="./assets/audio/Alan Walker, Sorana - Catch Me If You Can.mp3" id="mp3"></audio>
   <div class="audio-container">
     <div class="slider">
       <div class="slider-card active">
         <img src="./assets/images/Alan Walker, SoranaCatch Me If You Can.jpg" alt="1" class="slider-img">
-        <div class="slider-title">Alan Walker, Sorana Catch Me If You Can</div>
+        <div class="slider-title">Alan Walker - Catch Me If You Can</div>
       </div>
       <div class="slider-card">
         <img src="./assets/images/ascend.jpg" alt="2" class="slider-img">
-        <div class="slider-title">Ascend</div>
+        <div class="slider-title">Dezko - Ascend</div>
       </div>
       <div class="slider-card">
         <img src="./assets/images/GaullinMoonlight.jpg" alt="3" class="slider-img">
-        <div class="slider-title">Gaullin Moonlight</div>
+        <div class="slider-title">Gaullin - Moonlight</div>
       </div>
     </div>
     <div class="control-container">
       <img class="control-btn-play" src="./assets/icon/play.png" alt="btnPausePlay">
-      <audio src="./assets/audio/Alan Walker, Sorana - Catch Me If You Can.mp3" id="mp3" controls></audio>
+      <div class="time-container">
+      <div class="time-container-currentTime"></div>
+      <div class="time-container-progressBar"></div>
+      <div class="time-container-trackTime"></div>
+      </div>   
       <div class="control-btns">
         <img src="./assets/icon/backward.png" alt="prev_btn" class="control-btn-prev">
         <img src="./assets/icon/forward.png" alt="next_btn" class="control-btn-next">

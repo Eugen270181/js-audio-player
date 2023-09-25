@@ -11,6 +11,8 @@
   /* outline:1px solid red; */
 }
  
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -106,6 +108,11 @@ body {
 .control-btn-next {
   max-width: 2rem;
 }
+.control-btn-play:hover,
+.control-btns:hover {
+  cursor:pointer;
+}
+
 /*----------------------FOOTER---------------------------------*/
 footer {
   display: flex;
