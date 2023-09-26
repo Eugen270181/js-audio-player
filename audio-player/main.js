@@ -1,4 +1,4 @@
-const btnPausePlay = document.querySelector('.control-btn-play');;
+const btnPausePlay = document.querySelector('.control-btn-play');
 const btnPrev = document.querySelector('.control-btn-prev');
 const btnNext = document.querySelector('.control-btn-next');
 const cards = document.querySelectorAll('.slider-card');
@@ -6,10 +6,7 @@ let audio = document.querySelector('#mp3');
 let progressBar = document.querySelector('.time-container-progressBar');
 let lengthTrack = document.querySelector('.time-container-trackTime');
 let currentTime = document.querySelector('.time-container-currentTime');
-let onePercentTrack = 0;
-setInterval(updateCurrentTime, 300);
-
-
+let onePercentTimeLine = 0;
 const countCards = cards.length;
 let activeCard=0;
 const trackList = [
@@ -17,7 +14,9 @@ const trackList = [
   "Dezko - Ascend.mp3",
   "Gaullin - Moonlight.mp3"    
 ];
-  
+let ptrUpdateTimeLine = setInterval(updateTimeLine, 200);
+let ptrUpdateCurrentTime = setInterval(updateCurrentTime, 200);
+let rewindTimeLine = false;
 
 function goTo(index) {
   progressBar.value = 0;
@@ -36,29 +35,35 @@ function audioPlayPause() {
   else { btnPausePlay.src = "./assets/icon/play.png"; audio.pause();}
 }
 
-function audioProgressBar() {
-
+function changeTimeLine() {
+  rewindTimeLine=false;
+  audio.currentTime = progressBar.value * onePercentTimeLine;
+  ptrUpdateTimeLine=setInterval(updateTimeLine,200);
+  updateCurrentTime();
 }
-
 /*-------------------------------------------------------------*/
 btnPrev.addEventListener('click', () => goTo(activeCard-1));
 btnNext.addEventListener('click', () => goTo(activeCard+1));
 btnPausePlay.addEventListener('click', audioPlayPause);
-btnPausePlay.addEventListener('change', audioProgressBar);
+progressBar.addEventListener('change', updateCurrentTime);
+progressBar.addEventListener('mousedown', ()=> {clearInterval(ptrUpdateTimeLine);rewindTimeLine=true;});
+progressBar.addEventListener('mouseup', changeTimeLine);
 /*---------------------------------------------------------------*/
 audio.onloadedmetadata = function() {
-  onePercentTrack = audio.duration/100;
+  onePercentTimeLine = audio.duration/100;
   lengthTrack.textContent = formatTime(audio.duration);
 }
-audio.onended = goTo(activeCard+1);
+audio.onended = () => {goTo(activeCard+1);}
 /*-----------------------------------------------------*/
+function updateCurrentTime() {
+  currentTime.textContent = formatTime(((!rewindTimeLine)?audio.currentTime:progressBar.value*onePercentTimeLine));
+}
+function updateTimeLine() {
+  progressBar.value = audio.currentTime/onePercentTimeLine;
+}
 function formatTime (time) { //format = M:SS
   time = Math.floor(time);
   const minutes = Math.floor(time/60);
   const seconds = time%60;
   return `${minutes}:${(seconds<=9)?'0':''}${seconds}`;
 }
-function updateCurrentTime() {
-  currentTime.textContent = formatTime(audio.currentTime);
-}
-
