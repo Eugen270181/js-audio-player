@@ -7,12 +7,10 @@
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
-  color:gainsboro; */
-  /* outline:1px solid red; */
+  color:gainsboro;
+  outline: 1px solid red; 
 }
  
-
-
 body {
   display: flex;
   flex-direction: column;
@@ -30,6 +28,7 @@ body {
   /* height: auto; */
   opacity: 0.9;
 }
+
 /*----------------SLIDER_CONTAINER--------------*/
 .slider {
   margin-top: 2rem;
@@ -86,7 +85,7 @@ body {
 .control-container {
   display: flex;
   /* margin-top: 3rem; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   background: #612ae1;
   border-radius: 0rem 0rem 1rem 1rem;
@@ -97,9 +96,7 @@ body {
 .control-btn-play {
   max-width: 4rem;
 }
-#mp3 {
-  
-}
+
 .control-btns {
   display:flex;
   flex-direction: column;
@@ -109,9 +106,44 @@ body {
   max-width: 2rem;
 }
 .control-btn-play:hover,
-.control-btns:hover {
+.control-btn-prev:hover,
+.control-btn-next:hover {
+  filter: invert(0.7);
   cursor:pointer;
 }
+
+.time-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.time-container-progressBar {
+  appearance: none;
+  flex-grow:1;
+  height: 1rem;
+  background: #f5ee90;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.time-container-progressBar::-webkit-slider-thumb {
+    appearance: none;
+    height: 1.5rem;
+    width: 1rem;
+    background-color: black;
+    border: 0;
+    border-radius: 1rem;
+}
+
+.time-container-currentTime {
+  min-width:2rem;
+  color:#e0ceba;
+}
+.time-container-trackTime {
+  min-width:2rem;
+  color:#e0ceba;
+}
+
 
 /*----------------------FOOTER---------------------------------*/
 footer {
@@ -129,3 +161,17 @@ footer {
   height: 4rem;
   filter: invert(0.7);
 }
+/*----------------adaptive-----------------*/
+@media (max-width:768px) {
+  .audio-container {
+    width: 80%;
+  }  
+}
+
+@media (max-width:450px) {
+  .audio-container {
+    width: 100%;
+  }  
+
+}
+
