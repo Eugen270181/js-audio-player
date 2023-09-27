@@ -8,7 +8,7 @@
   font-weight: 400;
   font-size: 1rem;
   color:gainsboro;
-  outline: 1px solid red; 
+  /* outline: 1px solid red;  */
 }
  
 body {
@@ -30,7 +30,7 @@ body {
   height:24rem;
   /* height: 80%; */
   /* height: auto; */
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 /*----------------SLIDER_CONTAINER--------------*/
@@ -46,7 +46,7 @@ body {
 
 .slider-card {
   display: none;
-  height: 440px;
+  height: 27rem;
   opacity: 0;
   animation: 0.6s cubic-bezier(0, 0, 1, 1) fadeOutFromFlex;
 }
@@ -60,36 +60,36 @@ body {
 /*---------------animation slider card----------------------------*/
 @keyframes fadeInFromNone {
   0% {
-    display: none;
+    /* display: none; */
     opacity: 0;
   }
   1% {
-    display: flex;
+    /* display: flex; */
     opacity: 0;
   }
   100% {
-    display: flex;
+    /* display: flex; */
     opacity: 1;
   }
 }
 
 @keyframes fadeOutFromFlex {
   0% {
-    display: flex;
+    /* display: flex; */
     opacity: 1;
   }
   99% {
-    display: flex;
+    /* display: flex; */
     opacity: 0;
   }
   100% {
-    display: none;
+    /* display: none; */
     opacity: 0;
   }
 }
 /*---------------------------------------------------------------*/
 .slider-img {
-  /* max-height: 500px; */
+  height: 90%;
   max-width: 100%;
   display: block;
   margin: 0 auto;
@@ -200,7 +200,7 @@ footer {
     height: 60%;
   }  
   .slider-img {
-    height: 400px;
+    height: 90%;
   }
   .slider {
     margin-top: 1rem;
@@ -212,7 +212,7 @@ footer {
     width: 100%;
   }  
   .slider-img {
-    height: 300px;
+    height: 94%;
   }
   .slider {
     margin-top: 0;
