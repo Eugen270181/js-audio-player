@@ -18,6 +18,7 @@ body {
   height:100vh;
   width: 100vw;
   background: url("./assets/images/background8.jpg") center/cover no-repeat;
+  background-position: bottom;
 }
 /*----------------AUDIO_CONTAINER-----------------------------*/
 .audio-container {
@@ -25,16 +26,16 @@ body {
   flex-direction: column;
   align-self: center;
   /* margin: 0 auto; */
-  width: 50%;
-  height: 80%;
-  overflow: hidden;
+  width: 24rem;
+  height:24rem;
+  /* height: 80%; */
   /* height: auto; */
   opacity: 0.9;
 }
 
 /*----------------SLIDER_CONTAINER--------------*/
 .slider {
-  /* margin-top: 2rem; */
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   /* position: relative; */
@@ -60,7 +61,7 @@ body {
 }
 
 .slider-img {
-  max-height: 500px;
+  /* max-height: 500px; */
   max-width: 100%;
   display: block;
   margin: 0 auto;
@@ -75,11 +76,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4.75rem;
+  /* height: 4.75rem; */
   text-align: center;
   background: #612ae1;
   color:  #6aeff7;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 1rem 1rem 0rem 0rem;
   text-shadow: 0 0 1rem;
   box-shadow: 0 0 1rem;
@@ -168,9 +169,13 @@ footer {
 @media (max-width:768px) {
   .audio-container {
     width: 80%;
+    height: 60%;
   }  
   .slider-img {
     height: 400px;
+  }
+  .slider {
+    margin-top: 1rem;
   }
 }
 
@@ -182,13 +187,7 @@ footer {
     height: 300px;
   }
   .slider {
-    margin-top: 0.5rem;
-  }
-  .slider-title {
-    margin-top: 0.5rem;
-  }
-  footer {
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 }
 
