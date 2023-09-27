@@ -18,6 +18,19 @@ let ptrUpdateTimeLine = setInterval(updateTimeLine, 200);
 let ptrUpdateCurrentTime = setInterval(updateCurrentTime, 200);
 let rewindTimeLine = false;
 
+audio.onloadedmetadata = function() {
+  onePercentTimeLine = audio.duration/100;
+  lengthTrack.textContent = formatTime(audio.duration);
+}
+audio.onended = () => {goTo(activeCard+1);}
+
+function updateCurrentTime() {
+  currentTime.textContent = formatTime(((!rewindTimeLine)?audio.currentTime:progressBar.value*onePercentTimeLine));
+}
+function updateTimeLine() {
+  progressBar.value = audio.currentTime/onePercentTimeLine;
+}
+
 function goTo(index) {
   progressBar.value = 0;
   cards[activeCard].classList.remove('active');
@@ -29,38 +42,23 @@ function goTo(index) {
   audioPlayPause(); //play audio because default it paused when loaded
   activeCard=index;
 }
-
 function audioPlayPause() {
   if(audio.paused) {btnPausePlay.src = "./assets/icon/pause.png"; audio.play();} 
   else { btnPausePlay.src = "./assets/icon/play.png"; audio.pause();}
 }
-
 function changeTimeLine() {
-  rewindTimeLine=false;
   audio.currentTime = progressBar.value * onePercentTimeLine;
-  ptrUpdateTimeLine=setInterval(updateTimeLine,200);
   updateCurrentTime();
 }
 /*-------------------------------------------------------------*/
 btnPrev.addEventListener('click', () => goTo(activeCard-1));
 btnNext.addEventListener('click', () => goTo(activeCard+1));
 btnPausePlay.addEventListener('click', audioPlayPause);
-progressBar.addEventListener('change', updateCurrentTime);
+progressBar.addEventListener('change', changeTimeLine);
 progressBar.addEventListener('mousedown', ()=> {clearInterval(ptrUpdateTimeLine);rewindTimeLine=true;});
-progressBar.addEventListener('mouseup', changeTimeLine);
+progressBar.addEventListener('mouseup', ()=> {rewindTimeLine=false;ptrUpdateTimeLine=setInterval(updateTimeLine,200);});
 /*---------------------------------------------------------------*/
-audio.onloadedmetadata = function() {
-  onePercentTimeLine = audio.duration/100;
-  lengthTrack.textContent = formatTime(audio.duration);
-}
-audio.onended = () => {goTo(activeCard+1);}
 /*-----------------------------------------------------*/
-function updateCurrentTime() {
-  currentTime.textContent = formatTime(((!rewindTimeLine)?audio.currentTime:progressBar.value*onePercentTimeLine));
-}
-function updateTimeLine() {
-  progressBar.value = audio.currentTime/onePercentTimeLine;
-}
 function formatTime (time) { //format = M:SS
   time = Math.floor(time);
   const minutes = Math.floor(time/60);
