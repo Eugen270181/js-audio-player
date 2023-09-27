@@ -46,20 +46,48 @@ body {
 
 .slider-card {
   display: none;
-  height: auto;
-  visibility: hidden;
+  height: 440px;
   opacity: 0;
-  transition: 0.6s;
+  animation: 0.6s cubic-bezier(0, 0, 1, 1) fadeOutFromFlex;
 }
 
 .slider-card.active {
-  display: flex;
+  display: block;
   flex-direction: column;
-  visibility:visible;
   opacity: 1;
-  transition: 0.6s;
+  animation: 0.6s cubic-bezier(0, 0, 1, 1) fadeInFromNone;
+}
+/*---------------animation slider card----------------------------*/
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+  }
 }
 
+@keyframes fadeOutFromFlex {
+  0% {
+    display: flex;
+    opacity: 1;
+  }
+  99% {
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+/*---------------------------------------------------------------*/
 .slider-img {
   /* max-height: 500px; */
   max-width: 100%;
