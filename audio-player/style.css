@@ -17,7 +17,7 @@ body {
   justify-content: space-between;
   height:100vh;
   width: 100vw;
-  background: url("./assets/images/background8.jpg") center/cover no-repeat;
+  background: url("./assets/images/background3.jpg") center/cover no-repeat;
   background-position: bottom;
 }
 /*----------------AUDIO_CONTAINER-----------------------------*/
@@ -25,11 +25,8 @@ body {
   display: flex;
   flex-direction: column;
   align-self: center;
-  /* margin: 0 auto; */
   width: 24rem;
   height:24rem;
-  /* height: 80%; */
-  /* height: auto; */
   opacity: 0.8;
 }
 
@@ -38,9 +35,6 @@ body {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  /* position: relative; */
-  /* height: 600px; */
-  /* opacity: 0.8; */
   display: flex;
 }
 
@@ -100,11 +94,9 @@ body {
 }
 
 .slider-title {
-  /* margin-top: 2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 4.75rem; */
   text-align: center;
   background: #612ae1;
   color:  #6aeff7;
@@ -116,12 +108,9 @@ body {
 /*----------------CONTROL_CONTAINER--------------*/
 .control-container {
   display: flex;
-  /* margin-top: 3rem; */
-  /* justify-content: space-between; */
   align-items: center;
   background: #612ae1;
   border-radius: 0rem 0rem 1rem 1rem;
-  /* border: 0.2rem solid grey; */
   box-shadow: inset 0px -20px 20px 0px #6aeff7;
   
 }
@@ -182,7 +171,6 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-top: 1rem; */
   border-top: 0.3rem solid  #612ae1;
   background: black;
   opacity: 0.8;
