@@ -1,1 +1,78 @@
-<h1>TEST</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>@Audio-player@</title>
+</head>
+<body>
+  <audio src="./assets/audio/Alan Walker, Sorana - Catch Me If You Can.mp3" id="mp3" preload="metadata"></audio>
+  <div class="audio-container">
+    <div class="slider">
+      <div class="slider-card active">
+        <img src="./assets/images/Alan Walker, SoranaCatch Me If You Can.jpg" alt="1" class="slider-img">
+        <div class="slider-title">Alan Walker - Catch Me If You Can</div>
+      </div>
+      <div class="slider-card">
+        <img src="./assets/images/ascend.jpg" alt="2" class="slider-img">
+        <div class="slider-title">Dezko - Ascend</div>
+      </div>
+      <div class="slider-card">
+        <img src="./assets/images/GaullinMoonlight.jpg" alt="3" class="slider-img">
+        <div class="slider-title">Gaullin - Moonlight</div>
+      </div>
+      <div class="slider-card">
+        <img src="./assets/images/Imagine DragonsBones.jpg" alt="4" class="slider-img">
+        <div class="slider-title">Imagine Dragons - Bones</div>
+      </div>
+      <div class="slider-card">
+        <img src="./assets/images/Lil Nas XSTAR WALKIN.jpg" alt="5" class="slider-img">
+        <div class="slider-title">Lil Nas X - STAR WALKIN</div>
+      </div>
+      <div class="slider-card">
+        <img src="./assets/images/maxresdefault.jpg" alt="6" class="slider-img">
+        <div class="slider-title">Jax Jones & Calum Scott - Whistle</div>
+      </div>
+      <div class="slider-card">
+        <img src="./assets/images/Olivia AddamsFool Me Once.jpg" alt="7" class="slider-img">
+        <div class="slider-title">Olivia Addams - Fool Me Once</div>
+      </div>      
+      <div class="slider-card">
+        <img src="./assets/images/TiestoLay Low.jpg" alt="8" class="slider-img">
+        <div class="slider-title">Tiesto - Lay Low</div>
+      </div>  
+      <div class="slider-card">
+        <img src="./assets/images/Weekends-Dave-Matthias.jpg" alt="9" class="slider-img">
+        <div class="slider-title">Freya Ridings - Weekends</div>
+      </div>  
+      <div class="slider-card">
+        <img src="./assets/images/Will.I.AmScream and Shout.jpg" alt="10" class="slider-img">
+        <div class="slider-title">Will.i.am - Scream&Shout</div>
+      </div> 
+    </div>
+    <div class="control-container">
+      <img class="control-btn-play" src="./assets/icon/play.png" alt="btnPausePlay">
+      <div class="time-container">
+        <div class="time-container-currentTime"></div>
+        <input type="range" value="0" min="0" max="100" class="time-container-progressBar">
+        <div class="time-container-trackTime"></div>
+      </div>   
+      <div class="control-btns">
+        <img src="./assets/icon/backward.png" alt="prev_btn" class="control-btn-prev">
+        <img src="./assets/icon/forward.png" alt="next_btn" class="control-btn-next">
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-left">2023</div>
+    <a class="footer-center" href="https://rs.school/js-stage0/">
+      <img class="footer-logo" src="./assets/icon/rs_school.svg" alt="rs_school.svg">
+    </a>
+    <a class="footer-right" href="https://github.com/Eugen270181/">Eugen Sadovnikov</a>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
