@@ -28,6 +28,7 @@ let onePercentTimeLine = 0;
 const countCards = cards.length;
 let activeCard=0;
 const trackList = [
+  "Justin Bieber - Ghost.mp3",
   "Alan Walker, Sorana - Catch Me If You Can.mp3",
   "Dezko - Ascend.mp3",
   "Gaullin - Moonlight.mp3",
@@ -37,7 +38,7 @@ const trackList = [
   "Olivia Addams - Fool Me Once.mp3",
   "Tiesto - Lay Low.mp3",
   "Freya Ridings - Weekends.mp3",
-  "Will.i.am Scream .mp3"
+  "Will.i.am Scream .mp3",
 ];
 let ptrUpdateTimeLine = setInterval(updateTimeLine, 200);
 let ptrUpdateCurrentTime = setInterval(updateCurrentTime, 200);
